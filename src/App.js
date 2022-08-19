@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Axios from "axios";
 
 function App() {
+  const [message, setMessage] = useState('')
   const [name, setName] = useState("");
   const [age, setAge] = useState(0);
   const [listOfFriends, setListOfFriends] = useState([]);
@@ -59,7 +60,9 @@ function App() {
         <input
           type="text"
           placeholder="Friend name"
+          value={message}
           onChange={(event) => {
+            setMessage(event.target.value)
             setName(event.target.value);
           }}
         />
@@ -72,8 +75,13 @@ function App() {
         />
 
 
-        <button onClick={addFriend}>Add Friend</button>
+        <button disabled={!message} onClick={addFriend}>Add Friend</button>
       </div>
+      
+      <hr/>
+
+      <button disabled={true}>Click</button>
+      <hr/>
 
       <div className="listOfFriends">
         {listOfFriends.map((val) => {
