@@ -75,7 +75,7 @@ function App() {
         />
 
 
-        <button disabled={!message} onClick={addFriend}>Add Friend</button>
+        <button disabled={!message} >Add Friend</button>
       </div>
       
       <hr/>
