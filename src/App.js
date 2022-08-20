@@ -76,7 +76,7 @@ function App() {
       </div>
     
 
-      <div className="listOfFriends">
+      <div className="ListOfFriends">
         {listOfFriends.map((val) => {
          return (
             <div className="friendContainer">
