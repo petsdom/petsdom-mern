@@ -8,7 +8,7 @@ function App() {
   const [listOfFriends, setListOfFriends] = useState([]);
 
   const addFriend = () => {
-    Axios.post("https://petsdom-mern.herokuapp.com/addfriend", {
+    Axios.post("https://petsdom-mern-backend.onrender.com/addfriend", {
       name: name,
       age: age,
     }).then((response) => {
@@ -22,7 +22,7 @@ function App() {
   const updateFriend = (id) => {
     const newAge = prompt("enter new age: ")
 
-    Axios.put("https://petsdom-mern.herokuapp.com/update", {
+    Axios.put("https://petsdom-mern-backend.onrender.com/update", {
       newAge: newAge,
       id: id,
     }).then(() => {
@@ -34,7 +34,7 @@ function App() {
     });
   };
   const deleteFriend = (id) => {
-    Axios.delete(`https://petsdom-mern.herokuapp.com/delete/${id}`).then(
+    Axios.delete(`https://petsdom-mern-backend.onrender.com/delete/${id}`).then(
       () => {
         setListOfFriends(
           listOfFriends.filter((val) => {
@@ -45,7 +45,7 @@ function App() {
     );
   };
   useEffect(() => {
-    Axios.get("https://petsdom-mern.herokuapp.com/read")
+    Axios.get("https://petsdom-mern-backend.onrender.com/read")
        .then((response) => {
         setListOfFriends(response.data);
       })
